@@ -1,5 +1,2 @@
-export  const FavoritesPage = () => {
-  return(
-      <div>Favorites</div>
-  )
-}
+export  const FavoritesPage = () =>
+    <div>Favorites</div>

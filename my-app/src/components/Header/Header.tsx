@@ -1,4 +1,3 @@
-import React from "react";
 import {AllBtn} from "./AllBtn";
 import {FavoritesBtn} from "./FavoritesBtn";
 import {CartBtn} from "./CartBtn";

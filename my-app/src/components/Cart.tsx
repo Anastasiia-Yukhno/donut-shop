@@ -1,5 +1,2 @@
-export const Cart = () => {
-    return (
-        <div>Cart</div>
-    )
-}
+export const Cart = () =>
+    <div>Cart</div>
