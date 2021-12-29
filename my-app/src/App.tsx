@@ -1,11 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import {Cart} from "./components/Cart";
-import {AllPage} from "./components/AllPage";
 import {Header} from "./components/Header";
 import {FavoritesPage} from "./components/FavoritesPage";
+import {Content} from "./components/Content";
 
 function App() {
     return (
@@ -15,20 +13,19 @@ function App() {
             <Routes>
                 <Route
                     path="/"
-                    element={<AllPage></AllPage>}
+                    element={<Content/>}
                 />
                 <Route
                     path="/all"
-                    element={<AllPage></AllPage>}
+                    element={<Content/>}
                 />
                 <Route
                     path="/favorites"
-                    element={<FavoritesPage></FavoritesPage>}
+                    element={<FavoritesPage/>}
                 />
-
                 <Route
                     path="/cart"
-                    element={<Cart></Cart>}
+                    element={<Cart/>}
                 />
             </Routes>
 

@@ -2,10 +2,10 @@ import React from "react";
 import {AllBtn} from "./AllBtn";
 import {FavoritesBtn} from "./FavoritesBtn";
 import {CartBtn} from "./CartBtn";
-import {links} from "../linksTo/links";
-import {HeaderContainer, Logo, GroupOfLinks} from "../box/headerStyle";
+import {links} from "../../linksTo/links";
+import {HeaderContainer, Logo, GroupOfLinks} from "./Header.styles";
 
-export const Header = () => {
+export const HeaderPart = () => {
     return (
         <HeaderContainer>
             <Logo>Donuts</Logo>
