@@ -1,7 +1,6 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {THeader} from "../linksTo/links";
-import {HeaderLink} from "../box/headerStyle";
+import {THeader} from "../../linksTo/links";
+import {HeaderLink} from "./Header.styles";
 
 export const  AllBtn = ({links}: THeader) => {
     return (

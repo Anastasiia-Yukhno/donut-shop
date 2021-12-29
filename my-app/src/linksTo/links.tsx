@@ -8,6 +8,11 @@ export type THeader = {
     links: Array<TLinkItem>
 }
 
+// Header /
+// Header.styles.tsx
+// Header.tsx
+// Header.types.ts
+// index.ts
 export const links = {
     links:[
         {
