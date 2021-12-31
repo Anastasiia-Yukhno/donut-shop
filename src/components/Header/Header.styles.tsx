@@ -17,14 +17,6 @@ export const GroupOfLinks = styled.div`
   display: flex;
   background: #f0f0f0;
 `
-export const Logo = styled.div`
-  color: black;
-  font-size: 1.5em;
-  font-family: monospace;
-`;
-export const GroupOfLinks = styled.div`
-  display: flex;
-`;
 
 export const HeaderLink = styled(Link)`
   font-size: 1.5em;

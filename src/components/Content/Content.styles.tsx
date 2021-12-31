@@ -22,7 +22,7 @@ export const HeaderAll = styled.h3`
   font-family: monospace;
   padding: 0px;
   margin: 0px;
-  flex-basis: 50%;
+  flex-basis: 40%;
   font-weight: normal;
 `
 
@@ -30,20 +30,17 @@ export const Sorting = styled.div`
   position: relative;
   cursor: pointer;
   width: 10%;
-
 `
 export const SortButton = styled.button`
   font-size: 1.25em;
   font-family: monospace;
   border: none;
   cursor: pointer;
-
 `
 
 export  const Select = styled.div`
   font-size: 1em;
   position: absolute;
- 
 `
 export const Option = styled.div`
   padding: 3px 0`
@@ -68,16 +65,13 @@ export const CardsContainer = styled.div`
   width: 30%;`
 
 export const Card = styled.div`
-  
   border: 1px solid black;
-
 `
 export const CardsHeader = styled.div`
   display: flex;
   flex-direction: column;
 `
 export const CardsImageContainer = styled.div`
-  
 `
 export const Image = styled.img`
   width: 100%;
@@ -88,7 +82,6 @@ export const Title = styled.div`
   padding: 20px;;
 `
 export const CardsFooter = styled.div`
- 
 `
 
 export const CardsDescription = styled.div`
@@ -111,7 +104,6 @@ export const Like = styled.button`
   &:hover {
     color: #b8b8b8;
     cursor: pointer
-
   }
 ;
 
@@ -125,7 +117,6 @@ export const Buy = styled.button`
   &:hover {
     color: #b8b8b8;
     cursor: pointer
-
   }
 `
 

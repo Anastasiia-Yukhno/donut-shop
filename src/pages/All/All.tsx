@@ -1,7 +1,7 @@
-import React from 'react';
 import { Header } from '../../components';
-import { links } from '../../contsts';
+import {links} from "../../contsts";
 import { Container } from './All.styles';
+import Content from "../../components/Content";
 
 const All = () => {
   return (
@@ -9,10 +9,7 @@ const All = () => {
       <Header
         links={links}
       />
-
-      <h1>All</h1>
-
-      <p>Display cards here</p>
+      <Content/>
     </Container>
   )
 };

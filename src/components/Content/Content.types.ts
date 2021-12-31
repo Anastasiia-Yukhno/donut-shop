@@ -2,7 +2,7 @@ export type TCard = {
     title: string;
     image: string;
     price: number;
-    onBuy: () => void;
-    onLike: () => void;
+    onBuy: (date:void) => void;
+    onLike: (date:void) => void;
 }
 

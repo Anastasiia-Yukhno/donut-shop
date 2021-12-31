@@ -34,15 +34,15 @@ export const CardsItem = ({title, image, price, onBuy, onLike}:TCard) =>
                 <CardsDescription>
                     <Price>{`${price}$`}</Price>
                     <CardsButtons>
-                        <Like onClick={onLike}>Like</Like>
-                        <Buy onClick={onBuy}>Buy</Buy>
+                        <Like onClick={() => onLike () }>Like</Like>
+                        <Buy onClick={() => onBuy () }>Buy</Buy>
                     </CardsButtons>
                 </CardsDescription>
             </CardsFooter>
         </Card>
     </CardsContainer>
 
-export const Page = () => {
+const Content = () => {
     const [isSorting, setSorting] = useState(false)
     return (
         <Container>
@@ -59,8 +59,10 @@ export const Page = () => {
                 </Sorting>
             </TopPart>
             <CardsGroup>
-                {DonutList.map((card) => <CardsItem {...card}/>)}
+                {DonutList.map((card) => <CardsItem {...card} key={`${card.title} + ${Math.random()}`}/>)}
             </CardsGroup>
         </Container>
     )
 }
+
+export default Content

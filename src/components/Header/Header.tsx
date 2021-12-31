@@ -1,4 +1,3 @@
-import React from "react";
 import { THeader } from './Header.types';
 import {HeaderContainer, Logo, GroupOfLinks, HeaderLink} from "./Header.styles";
 

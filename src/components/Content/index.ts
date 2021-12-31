@@ -1,3 +1,2 @@
-import {Page} from "./Content";
 
-export const Content = Page
+export {default} from './Content'
