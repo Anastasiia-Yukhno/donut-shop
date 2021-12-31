@@ -4,7 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7508ad4-8875-4fdd-87e5-8687d0ba7dd2" name="Changes" comment="" />
+    <list default="true" id="c7508ad4-8875-4fdd-87e5-8687d0ba7dd2" name="Changes" comment="fixing project structure and adds cards">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.storybook/preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Mock/donutList.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Cart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Content/Content.styles.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Content/Content.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Content/Content.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Content/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/FavoritesPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/AllBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/CartBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/FavoritesBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/Header.styles.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/Header.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/components/Header/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/linksTo/links.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Button.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Header.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Introduction.stories.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Page.stories.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/Page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/code-brackets.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/colors.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/comments.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/direction.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/flow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/plugin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/repo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/assets/stackalt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/stories/page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FavoritesPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/AllBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/CartBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/FavoritesBtn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/linksTo/links.tsx" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +86,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="22uL0NDd8hWN66e6YWP4DPILPPQ" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -40,8 +106,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="E:\Tech direction\test-task-1\my-app\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="E:\Tech direction\test-task-1\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,10 +119,69 @@
       <option name="presentableId" value="Default" />
       <updated>1640682301852</updated>
       <workItem from="1640682303154" duration="9820000" />
+      <workItem from="1640874459563" duration="4398000" />
+      <workItem from="1640881495136" duration="1090000" />
+      <workItem from="1640896424395" duration="663000" />
+      <workItem from="1640932434252" duration="67000" />
+      <workItem from="1640933215260" duration="4848000" />
     </task>
+    <task id="LOCAL-00001" summary="add cards to home page">
+      <created>1640875963920</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640875963920</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change root folder">
+      <created>1640896846063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1640896846063</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixing project structure and adds cards">
+      <created>1640937065956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1640937065956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/refactor/project-structure" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="add cards to home page" />
+    <MESSAGE value="change root folder" />
+    <MESSAGE value="fixing project structure and adds cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing project structure and adds cards" />
   </component>
 </project>
