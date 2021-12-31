@@ -1,36 +1,27 @@
-import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import {Cart} from "./components/Cart";
-import {Header} from "./components/Header";
-import {FavoritesPage} from "./components/FavoritesPage";
-import {Content} from "./components/Content";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {Cart, All, Favorites} from './pages';
+export { links } from './contsts';
 
 function App() {
-    return (
-        <Router>
-            <Header/>
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={<All />}
+        />
+        <Route
+          path="/favorites"
+          element={<Favorites/>}
+        />
+        <Route
+          path="/cart"
+          element={<Cart/>}
+        />
+      </Routes>
 
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Content/>}
-                />
-                <Route
-                    path="/all"
-                    element={<Content/>}
-                />
-                <Route
-                    path="/favorites"
-                    element={<FavoritesPage/>}
-                />
-                <Route
-                    path="/cart"
-                    element={<Cart/>}
-                />
-            </Routes>
-
-        </Router>
-    );
+    </Router>
+  );
 }
 
 export default App;

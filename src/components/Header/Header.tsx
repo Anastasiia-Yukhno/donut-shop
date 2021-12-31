@@ -1,19 +1,28 @@
-import {AllBtn} from "./AllBtn";
-import {FavoritesBtn} from "./FavoritesBtn";
-import {CartBtn} from "./CartBtn";
-import {links} from "../../linksTo/links";
-import {HeaderContainer, Logo, GroupOfLinks} from "./Header.styles";
+import React from "react";
+import { THeader } from './Header.types';
+import {HeaderContainer, Logo, GroupOfLinks, HeaderLink} from "./Header.styles";
 
-export const HeaderPart = () => {
-    return (
-        <HeaderContainer>
-            <Logo>Donuts</Logo>
-            <GroupOfLinks>
-                <AllBtn {...links}/>
-                <FavoritesBtn {...links}/>
-            </GroupOfLinks>
-            <CartBtn {...links}/>
-        </HeaderContainer>
-    )
-}
+const Header = ({ links }: THeader) => {
+  return (
+    <HeaderContainer>
+      <Logo>Donuts</Logo>
+      <GroupOfLinks>
+        {
+          links?.map(({ link, title }) => (
+            <HeaderLink
+              key={link}
+              to={link}
+            >
+              {title}
+            </HeaderLink>
+          ))
+        }
+      </GroupOfLinks>
 
+      <HeaderLink to={'/cart'}>Cart</HeaderLink>
+
+    </HeaderContainer>
+  )
+};
+
+export default Header;
