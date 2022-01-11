@@ -4,5 +4,6 @@ export type TCard = {
     price: number;
     onBuy?: (date:void) => void;
     onLike?: (date:void) => void;
+    likesCount?: number
 }
 

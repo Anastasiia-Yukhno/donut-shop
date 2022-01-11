@@ -7,10 +7,10 @@ import {
     CardsHeader,
     CardsImageContainer,
     Image, Like, Price,
-    Title
+    Title, LikesCount
 } from './Card.styles';
 
-const CardsItem = ({title, image, price, onBuy, onLike}:TCard) =>
+const CardsItem = ({title, image, price, onBuy, onLike, likesCount}:TCard) =>
     <CardsContainer>
         <Card>
             <CardsHeader>
@@ -24,6 +24,9 @@ const CardsItem = ({title, image, price, onBuy, onLike}:TCard) =>
                 <CardsDescription>
                     <Price>{`${price}$`}</Price>
                     <CardsButtons>
+                        <LikesCount>
+                            ❤{likesCount}
+                        </LikesCount>
                         <Like onClick={onLike}>Like</Like>
                         <Buy onClick={onBuy}>Buy</Buy>
                     </CardsButtons>

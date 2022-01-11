@@ -3,6 +3,7 @@ import {Cart, All, Favorites} from './pages';
 export { links } from './contsts';
 
 function App() {
+
   return (
     <Router>
       <Routes>

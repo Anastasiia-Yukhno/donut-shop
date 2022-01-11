@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 export const CardsContainer = styled.div`
   padding: 20px;
-  width: 30%;`
+  width: 20%;
+  min-width: 350px; 
+`
+
 
 export const Card = styled.div`
-  border: 1px solid black;
+  border: 1px solid #252525;
+  border-radius: 10px;
 `
 export const CardsHeader = styled.div`
   display: flex;
@@ -15,11 +19,14 @@ export const CardsImageContainer = styled.div`
 `
 export const Image = styled.img`
   width: 100%;
+  height: 300px;
+  
 `
 
 export const Title = styled.div`
-  font-size: 2em;
+  font-size: 20px;
   padding: 20px;;
+  font-family: cursive;
 `
 export const CardsFooter = styled.div`
 `
@@ -35,6 +42,13 @@ export const Price = styled.div`
   padding: 2px;
 `
 export const CardsButtons = styled.div`
+  display: flex;
+  align-items: baseline;
+  font-family: monospace;
+`
+export const LikesCount = styled.div`
+  font-size: 1.5em;
+  padding: 0 10px
 `
 export const Like = styled.button`
   border: none;
