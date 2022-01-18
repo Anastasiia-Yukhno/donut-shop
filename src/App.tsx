@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import {Cart, All, Favorites} from './pages';
+
 export { links } from './contsts';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           path="/cart"
           element={<Cart/>}
         />
+
       </Routes>
 
     </Router>
