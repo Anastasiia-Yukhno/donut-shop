@@ -59,9 +59,9 @@ export const reducer = (state=defaultState, action:any) => {
 
         case INCREASE_COUNT:
             let card:TCard | object  = state.cart.find((card:TCard) => card.id === action.value) || {}
-            cart = state.cart
+            cart = [...state.cart]
             if(Object.keys(card).length !== 0) {
-                cart.push(card) //error
+                cart = cart.concat(card) //error
                 //  Argument of type 'object' is not assignable to parameter of type 'TCard'.
                 //  Type '{}' is missing the following properties from type 'TCard': title, image, price, onBuy, and 4 more
             }
