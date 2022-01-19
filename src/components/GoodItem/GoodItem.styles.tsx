@@ -6,7 +6,8 @@ export const Container = styled.div`
 export const GoodCount = styled.div`
   font-weight: bold;
   font-size: 1.5em;
-  padding: 10px 20px;`
+  padding: 10px 20px;
+`
 export const GoodImage = styled.img`
   max-height: 100px;
 `
@@ -41,7 +42,6 @@ export const RemoveContainer = styled.div`
   font-size: 1.5em;
   padding: 4px;
 `
-
 export const RemoveButton = styled.button`
   align-self: flex-end;
   width: 30px;
@@ -51,8 +51,11 @@ export const RemoveButton = styled.button`
   cursor: pointer;
   border: none;
   background: none;
-  &:hover {
+
+  &:hover:before, &:hover:after {
     opacity: 1;
+    background: #b8b8b8;
+    cursor: pointer
   }
   &:before, &:after {
     position: absolute;

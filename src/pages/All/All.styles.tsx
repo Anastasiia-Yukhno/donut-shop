@@ -3,34 +3,32 @@ import styled from "styled-components";
 export const Container = styled.div`
 `
 export const ContainerAll = styled.div`
-  background: #f0f0f0;
-  padding: 0 30px;
-  font-family: monospace;
   min-height: 100vh;
+  padding: 0 30px;
+  background: #f0f0f0;
+  font-family: monospace;
 `
-
 export const Border = styled.div`
   border-top: 2px black solid;
 `
-
 export const TopPart = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 30px 0;
   align-items: flex-end;
+  padding: 30px 0;
 `
 export const HeaderAll = styled.h3`
-  font-size: 2em;
-  font-family: monospace;
+  flex-basis: 42%;
   padding: 0;
   margin: 0;
-  flex-basis: 42%;
+  font-size: 2em;
+  font-family: monospace;
   font-weight: normal;
 `
 export const Sorting = styled.div`
   position: relative;
-  cursor: pointer;
   width: 10%;
+  cursor: pointer;
 `
 export const SortButton = styled.button`
   font-size: 1.25em;
@@ -39,27 +37,26 @@ export const SortButton = styled.button`
   cursor: pointer;
 `
 export  const Select = styled.div`
-  font-size: 1em;
   position: absolute;
+  font-size: 1em;
 `
 export const Option = styled.div`
   padding: 3px 0;
 `
 export const OptionLink = styled.a`
+  padding: 5px;
   text-decoration: none;
   background: #f0f0f0;
-  padding: 5px;
 
   &:hover {
     background: #d6d6d6;
   }
 `
-
 export const CardsGroup = styled.div`
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 `
 export const CardsHeader = styled.div`
   display: flex;
@@ -69,4 +66,3 @@ export const CardsImageContainer = styled.div`
 `
 export const CardsFooter = styled.div`
 `
-

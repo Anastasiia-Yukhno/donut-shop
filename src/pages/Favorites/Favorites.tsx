@@ -28,7 +28,6 @@ const Favorites = () => {
         dispatch(addGoodToCart(id));
         dispatch(closeModal)
     }
-
     const addToCartAndBuy = (id:number) => {
         dispatch(addGoodToCart(id))
         dispatch(closeModal)
@@ -38,7 +37,14 @@ const Favorites = () => {
     }
     return (
       <Container>
-          {isModalShow ? <ModalFolder title={good.title} price={good.price} image={good.image} id={good.id} addToCart={addToCart} addToCartAndBuy={addToCartAndBuy} closeModalFolder={closeModalFolder}/> : false}
+          {isModalShow ? <ModalFolder title={good.title}
+                                      price={good.price}
+                                      image={good.image}
+                                      id={good.id}
+                                      addToCart={addToCart}
+                                      addToCartAndBuy={addToCartAndBuy}
+                                      closeModalFolder={closeModalFolder}
+          /> : false}
           <Header
               links={links}
           />
@@ -49,7 +55,11 @@ const Favorites = () => {
               </TopPart>
 
               <CardsGroup>
-                  {favoritesDonuts.map((card, index) => <Card {...card} onBuy={onBuy} index={index} key={`${card.title} + ${Math.random()}`}/>)}
+                  {favoritesDonuts.map((card) => <Card
+                      {...card}
+                      onBuy={onBuy}
+                      addToCart={addToCart}
+                      key={`${card.title} + ${Math.random()}`}/>)}
               </CardsGroup>
           </ContainerAll>
       </Container>

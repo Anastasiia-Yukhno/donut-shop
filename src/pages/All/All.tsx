@@ -7,14 +7,13 @@ import {
     setLike,
     showModal
 } from "../../state/actions";
-import {defaultStateType} from "../../state";
-
-
 import {links} from "../../contsts";
-import { Header } from '../../components';
+
+import {Header} from '../../components';
 import {ModalFolder} from "../../components";
 import {Card} from "../../components";
 
+import {defaultStateType} from "../../state";
 import {TCard} from "../../components/Card/Card.types";
 
 import {
@@ -75,7 +74,14 @@ const All = () => {
 
     return (
         <Container>
-            {isModalShow ? <ModalFolder title={good.title} price={good.price} image={good.image} id={good.id} addToCart={addToCart} addToCartAndBuy={addToCartAndBuy} closeModalFolder={closeModalFolder}/> : false}
+            {isModalShow ? <ModalFolder
+                title={good.title}
+                price={good.price}
+                image={good.image}
+                id={good.id}
+                addToCart={addToCart}
+                addToCartAndBuy={addToCartAndBuy}
+                closeModalFolder={closeModalFolder}/> : false}
 
             <Header
                 links={links}
@@ -94,11 +100,16 @@ const All = () => {
                     </Sorting>
                 </TopPart>
                 <CardsGroup>
-                    {donutList.map((card, index) => <Card {...card} onLike={onLike} onBuy={onBuy} index={index} key={`${card.title} + ${Math.random()}`}/>)}
+                    {donutList.map((card, index) => <Card {...card}
+                                                          onLike={onLike}
+                                                          onBuy={onBuy}
+                                                          addToCart={addToCart}
+                                                          index={index}
+                                                          key={`${card.title} + ${Math.random()}`}
+                    />)}
                 </CardsGroup>
             </ContainerAll>
         </Container>
     )
 };
-
 export default All;

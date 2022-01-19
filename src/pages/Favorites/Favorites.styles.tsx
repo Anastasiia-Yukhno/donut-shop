@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
 `;
 export const ContainerAll = styled.div`
+  min-height: 100vh;
   background: #f0f0f0;
   padding: 0 30px;
   font-family: monospace;
-  min-height: 100vh;
 `
 export const Border = styled.div`
   border-top: 2px black solid;
@@ -14,22 +14,22 @@ export const Border = styled.div`
 export const TopPart = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 30px 0;
   align-items: flex-end;
+  padding: 30px 0;
 `
 export const HeaderFav = styled.h3`
-  font-size: 2em;
-  font-family: monospace;
+  flex-basis: 53%;
   padding: 0;
   margin: 0;
-  flex-basis: 53%;
+  font-size: 2em;
   font-weight: normal;
+  font-family: monospace;
 `
 export const CardsGroup = styled.div`
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
 `
 export const CardsHeader = styled.div`
   display: flex;
@@ -37,10 +37,5 @@ export const CardsHeader = styled.div`
 `
 export const CardsImageContainer = styled.div`
 `
-export const Title = styled.div`
-  font-size: 2em;
-  padding: 20px;;
-`
 export const CardsFooter = styled.div`
 `
-

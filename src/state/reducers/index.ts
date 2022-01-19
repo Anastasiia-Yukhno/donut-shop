@@ -10,6 +10,13 @@ import {
 } from "../actionTypes";
 import {defaultState} from "../index";
 import {TCard} from "../../components/Card/Card.types";
+import storage from 'redux-persist/lib/storage'
+import persistReducer from "redux-persist/es/persistReducer";
+
+const persistConfig:any = {
+    key: 'root',
+    storage
+}
 
 export const reducer = (state=defaultState, action:any) => {
     let index:number = 0
@@ -82,3 +89,9 @@ export const reducer = (state=defaultState, action:any) => {
             return state
     }
 }
+
+const persistedReducer = persistReducer(persistConfig, reducer) //error
+// Type 'TCard[]' is not assignable to type 'never[]'.Type 'TCard' is not assignable to type 'never'.
+
+
+export default persistedReducer
