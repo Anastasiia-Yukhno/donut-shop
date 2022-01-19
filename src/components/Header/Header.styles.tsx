@@ -25,7 +25,7 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   padding: 0 15px;
   font-family: monospace;
-
+  
   &:hover, &:active{
     color: gainsboro;
     cursor: pointer

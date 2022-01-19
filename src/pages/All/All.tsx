@@ -1,10 +1,25 @@
-import { Header } from '../../components';
-import {links} from "../../contsts";
-import { Container } from './All.styles';
 import {useState} from "react";
-import CardsItem from "../../components/Card";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    addGoodToCart,
+    closeModal,
+    removeLike,
+    setLike,
+    showModal
+} from "../../state/actions";
+import {defaultStateType} from "../../state";
+
+
+import {links} from "../../contsts";
+import { Header } from '../../components';
+import {ModalFolder} from "../../components";
+import {Card} from "../../components";
+
+import {TCard} from "../../components/Card/Card.types";
+
 import {
     CardsGroup,
+    Container,
     ContainerAll,
     HeaderAll,
     Sorting,
@@ -14,43 +29,61 @@ import {
     Select,
    Option, OptionLink
 } from './All.styles';
-import {useDispatch} from "react-redux";
-import {DonutList} from "../../Mock/donutList";
-import {getAPIRequest} from "../../state/actions";
 
 const All = () => {
-
     const dispatch = useDispatch()
-    const [donutList, setDonutList] = useState(DonutList)
+
+    const donuts = useSelector((state:defaultStateType) => state.donutList)
+    const isModalShow = useSelector((state:defaultStateType) => state.isModalShow)
+    const good = useSelector((state:defaultStateType) => state.goodForModal)
+
+    const [donutList, setDonutList] = useState<TCard[]>(donuts)
+    const [isSorting, setSorting] = useState(false)
+
+    //sorting
     const sortFeatured = () => {
-        let newDonutList = [...donutList]
-        newDonutList.sort((a, b) => a.likesCount < b.likesCount? 1 : -1)
-        setDonutList(newDonutList)
-        console.log('donutList', donutList)
+        setDonutList([...donutList].sort((a, b) => a.isLiked  > b.isLiked ? -1 : 1))
     }
     const sortPriceLowToHigh = () => {
-        let newDonutList = [...donutList]
-        newDonutList.sort((a, b) => a.price > b.price? 1 : -1)
-        setDonutList(newDonutList)
-        console.log('donutList', donutList)
+        setDonutList([...donutList].sort((a, b) => a.price > b.price ? 1 : -1))
+    }
+    const sortPriceHighToLow = () => {
+        setDonutList([...donutList].sort((a, b) => a.price < b.price ? 1 : -1))
     }
 
-    const sortPriceHighToLow = () => {
-        let newDonutList = [...donutList]
-        newDonutList.sort((a, b) => a.price < b.price? 1 : -1)
-        setDonutList(newDonutList)
-        console.log('donutList', donutList)
+    //actions with card
+    const onLike = (id:number, isLiked:boolean) => {
+        isLiked ? dispatch(removeLike(id)) : dispatch(setLike(id))
     }
-    const [isSorting, setSorting] = useState(false)
+
+    const onBuy = (title:string, image:string, price:number, id:number) => {
+        dispatch(showModal({title, price, image, id}))
+    }
+    //actions with modal folder
+    const addToCart = (id:number) => {
+        dispatch(addGoodToCart(id));
+        dispatch(closeModal)
+    }
+
+    const addToCartAndBuy = (id:number) => {
+        dispatch(addGoodToCart(id))
+        dispatch(closeModal)
+}
+    const closeModalFolder = () => {
+        dispatch(closeModal)
+    }
+
     return (
         <Container>
+            {isModalShow ? <ModalFolder title={good.title} price={good.price} image={good.image} id={good.id} addToCart={addToCart} addToCartAndBuy={addToCartAndBuy} closeModalFolder={closeModalFolder}/> : false}
+
             <Header
                 links={links}
             />
-            <ContainerAll  onClick={() => dispatch(getAPIRequest())}>
+            <ContainerAll>
                 <Border/>
                 <TopPart>
-                    <HeaderAll>All</HeaderAll>
+                    <HeaderAll>all</HeaderAll>
                     <Sorting>
                         <SortButton onClick={() => setSorting(!isSorting)}>Sorting</SortButton>
                         {isSorting && <Select>
@@ -61,10 +94,9 @@ const All = () => {
                     </Sorting>
                 </TopPart>
                 <CardsGroup>
-                    {donutList.map((card) => <CardsItem {...card} key={`${card.title} + ${Math.random()}`}/>)}
+                    {donutList.map((card, index) => <Card {...card} onLike={onLike} onBuy={onBuy} index={index} key={`${card.title} + ${Math.random()}`}/>)}
                 </CardsGroup>
             </ContainerAll>
-
         </Container>
     )
 };
