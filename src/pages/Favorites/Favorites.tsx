@@ -19,7 +19,6 @@ const Favorites = () => {
     const isModalShow = useSelector((state:defaultStateType) => state.isModalShow)
     const good = useSelector((state:defaultStateType) => state.goodForModal)
 
-
     const onBuy = (title:string, image:string, price:number, id:number) => {
         dispatch(showModal({title, price, image, id}))
     }

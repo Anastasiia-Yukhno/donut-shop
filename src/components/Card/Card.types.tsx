@@ -10,3 +10,5 @@ export type TCard = {
     index: number,
 }
 
+export type cardActionType = { image: string; price: number; isLiked: boolean; id: number; title: string }
+
