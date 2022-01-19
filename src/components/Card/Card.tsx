@@ -1,5 +1,10 @@
+import {useSelector} from "react-redux";
+import {defaultStateType} from "../../state";
+
 import {TCard} from "./Card.types";
+
 import {
+    AddToCart,
     Buy,
     Card, CardsButtons, CardsContainer, CardsDescription,
     CardsFooter,
@@ -8,11 +13,12 @@ import {
     Image, Like, Price,
     Title
 } from './Card.styles';
-import {useSelector} from "react-redux";
-import {defaultStateType} from "../../state";
 
-const CardsItem = ({title, image, price, onBuy, onLike, id, index}:TCard) => {
-    const isCurrentCardLiked:boolean = useSelector((state:defaultStateType) => state.donutList[state.donutList.findIndex((card:TCard) => card.id == id)].isLiked )
+import {FiShoppingCart} from 'react-icons/fi'
+import {FiHeart} from 'react-icons/fi'
+
+const CardsItem = ({title, image, price, onBuy, onLike, addToCart, id}:TCard) => {
+    const isCurrentCardLiked:boolean = useSelector((state:defaultStateType) => state.donutList[state.donutList.findIndex((card:TCard) => card.id === id)].isLiked )
 
     return(
         <CardsContainer>
@@ -28,14 +34,15 @@ const CardsItem = ({title, image, price, onBuy, onLike, id, index}:TCard) => {
                     <CardsDescription>
                         <Price>{`${price}$`}</Price>
                         <CardsButtons>
-                            <Like className={isCurrentCardLiked ? 'liked' : 'disliked'} onClick={() => {
-                                 onLike(id, isCurrentCardLiked);
-                                console.log('isCurrentCardLiked by onclick', isCurrentCardLiked, index)
-
-                            }}>&#9825;</Like>
-                            <Buy onClick={() => {
+                            <AddToCart onClick={() => addToCart(id)}><FiShoppingCart/></AddToCart>
+                            <Like className={isCurrentCardLiked ? 'liked' : 'disliked'}
+                                  onClick={() =>
+                                      onLike(id, isCurrentCardLiked)
+                                  }><FiHeart/>
+                            </Like>
+                            <Buy onClick={() =>
                                 onBuy(title, image, price, id)
-                            }}>Buy</Buy>
+                            }>Buy</Buy>
                         </CardsButtons>
                     </CardsDescription>
                 </CardsFooter>

@@ -46,7 +46,6 @@ const Cart = () => {
         calculateFinalPrice()
     }, [cartGoods])
 
-
     return (
         <Container>
             <Header
