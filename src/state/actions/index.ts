@@ -1,80 +1,102 @@
 import {
     GET_API,
-    SHOW_MODAL,
-    CLOSE_MODAL,
     SET_LIKE,
     ADD_TO_CART,
     GET_DONUT_LIST,
     REMOVE_LIKE,
-    INCREASE_COUNT, DECREASE_COUNT, SET_TOTAL_SUM, DELETE_GOOD
-} from "../actionTypes";
-import {TCard} from "../../components/Card/Card.types";
-import {store} from "../store";
-import {cardActionType} from "../../components/Card/Card.types";
+    INCREASE_COUNT,
+    DECREASE_COUNT,
+    SET_TOTAL_SUM,
+    DELETE_GOOD,
+} from '../actionTypes'
+import { TCard } from '../../components/Card/Card.types'
+import { store } from '../store'
+import { cardActionType } from '../../components/Card/Card.types'
 
 //thunk request
-export const addApiResult = (data:any) => ({type: GET_API, value: data})
+export const addApiResult = (data: any) => ({ type: GET_API, value: data })
 export const getAPIRequest = () => {
-    return (dispatch:any) => {
-        fetch(`${process.env.REACT_APP_API_URL}/weather?q=Pesochin&appid=f6c56099f6f579964efe2d6dd54694d7`).then(function (response) {
-            return response.json()
-        }).then( function (data) { console.log(data); dispatch(addApiResult(data)) })
+    return (dispatch: any) => {
+        fetch(
+            `${process.env.REACT_APP_API_URL}/weather?q=Pesochin&appid=f6c56099f6f579964efe2d6dd54694d7`
+        )
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                console.log(data)
+                dispatch(addApiResult(data))
+            })
     }
 }
 //get list of donuts
-export const getDonutList = (donutList:TCard[]) => ({type: GET_DONUT_LIST, value: donutList})
-
-//modal folder
-export const showModal = (good: Object) => ({type: SHOW_MODAL, value: good})
-export const closeModal = {type: CLOSE_MODAL, value: false}
-
+export const getDonutList = (donutList: TCard[]) => ({
+    type: GET_DONUT_LIST,
+    value: donutList,
+})
 
 //like
-export const setLike = (id:number) => {
+export const setLike = (id: number) => {
     let donutList: cardActionType[] = [...store.getState().donutList]
-    let card: cardActionType | undefined = donutList.find((card) => card.id === id) || undefined
-    if(card) {
-        card.isLiked = true
-    }
-    return  {type: SET_LIKE, value: donutList}
+    donutList.map((card: cardActionType) => {
+        if (card.id === id) {
+            card.isLiked = true
+        }
+        return donutList
+    })
+    return { type: SET_LIKE, value: donutList }
 }
-export const removeLike = (id:number) => {
-    let donutList: cardActionType[]  = [...store.getState().donutList]
-    let card: cardActionType | undefined = donutList.find((card) => card.id === id) || undefined
-    if(card) {
-        card.isLiked = false
-    }
-    return {type: REMOVE_LIKE, value: donutList}
+export const removeLike = (id: number) => {
+    let donutList: cardActionType[] = [...store.getState().donutList]
+    donutList.map((card: cardActionType) => {
+        if (card.id === id) {
+            card.isLiked = false
+        }
+        return donutList
+    })
+    return { type: REMOVE_LIKE, value: donutList }
 }
 
 //cart
-export const addGoodToCart = (id:number) => {
-    let card: cardActionType | undefined = store.getState().donutList.find((good) => good.id === id) || undefined
+export const addGoodToCart = (id: number) => {
+    let card: cardActionType | undefined = store
+        .getState()
+        .donutList.find((good) => good.id === id)
     let cart: cardActionType[] = [...store.getState().cart]
-    if(card) {
+    if (card) {
         cart = cart.concat(card)
     }
-    return {type: ADD_TO_CART, value: cart}
+    return { type: ADD_TO_CART, value: cart }
 }
-export const setDecreaseCount = (id:number) => {
+export const setDecreaseCount = (id: number) => {
     let cart: cardActionType[] = [...store.getState().cart]
-    let index: number = store.getState().cart.findIndex((good:TCard) => good.id === id)
+    let index: number = store
+        .getState()
+        .cart.findIndex((good: TCard) => good.id === id)
     cart.splice(index, 1)
-    return {type: DECREASE_COUNT, value: cart}
+    return { type: DECREASE_COUNT, value: cart }
 }
-export const setIncreaseCount = (id:number) => {
+export const setIncreaseCount = (id: number) => {
     let cart: cardActionType[] = [...store.getState().cart]
-    let card: cardActionType | undefined = store.getState().donutList.find((good) => good.id === id) || undefined
-    if(card) {
+    let card: cardActionType | undefined = store
+        .getState()
+        .donutList.find((good) => good.id === id)
+    if (card) {
         cart = cart.concat(card)
     }
-    return {type: INCREASE_COUNT, value: cart}
+    return { type: INCREASE_COUNT, value: cart }
 }
-export const deleteGood = (id:number) => {
+export const deleteGood = (id: number) => {
     let cart: TCard[] = [...store.getState().cart]
-    while(cart.find((card) => card.id === id)) {
-        cart.splice(cart.findIndex((card) => card.id === id), 1)
+    while (cart.find((card) => card.id === id)) {
+        cart.splice(
+            cart.findIndex((card) => card.id === id),
+            1
+        )
     }
-    return  {type: DELETE_GOOD, value: cart}
+    return { type: DELETE_GOOD, value: cart }
 }
-export const setTotalSum = (sum:number) => ({type: SET_TOTAL_SUM, value: sum})
+export const setTotalSum = (sum: number) => ({
+    type: SET_TOTAL_SUM,
+    value: sum,
+})

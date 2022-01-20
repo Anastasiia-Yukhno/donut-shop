@@ -1,1 +1,1 @@
-export {default} from './GoodItem'
+export { default } from './GoodItem'
