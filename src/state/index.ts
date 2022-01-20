@@ -7,7 +7,6 @@ export type goodForModalType = {
     image: string,
     id: number
 }
-
 export type donutListType = TCard[]
 
 export type defaultStateType = {
@@ -17,7 +16,6 @@ export type defaultStateType = {
     cart: TCard[] | [],
     totalSum: number
 }
-
 export const defaultState = {
     donutList: DonutList,
     isModalShow: false,

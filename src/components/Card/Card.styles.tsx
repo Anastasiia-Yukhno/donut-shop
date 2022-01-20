@@ -5,12 +5,11 @@ export const CardsContainer = styled.div`
   width: 20%;
   min-width: 350px; 
 `
-
-
 export const Card = styled.div`
   border: 1px solid #25252547;
   border-radius: 10px;
   background: white;
+  
   &:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
@@ -28,9 +27,7 @@ export const CardsImageContainer = styled.div`
 export const Image = styled.img`
   margin: 0 auto;
   max-height: 330px;
-  
 `
-
 export const Title = styled.div`
   font-size: 1em;   
   padding: 20px;;
@@ -40,7 +37,6 @@ export const Title = styled.div`
 `
 export const CardsFooter = styled.div`
 `
-
 export const CardsDescription = styled.div`
   padding: 30px;
   display: flex;
@@ -53,10 +49,22 @@ export const Price = styled.div`
 `
 export const CardsButtons = styled.div`
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   font-family: monospace;
 `
+export const AddToCart = styled.button`
+  border: none;
+  font-size: 26px;
+  font-family: monospace;
+  padding: 0 10px;
+  color: black;
+  background: none;
 
+  &:hover {
+    cursor: pointer;
+    color: #b8b8b8;
+  }
+`
 export const Like = styled.button`
   border: none;
   font-size: 26px;
@@ -68,19 +76,15 @@ export const Like = styled.button`
   &:hover {
     cursor: pointer
   }
-
   &.liked {
     color: red;
   }
-
   &.liked:hover {
     color: rgba(206, 119, 117, 0.66);
   }
-
   &.disliked {
     color: black;
   }
-
   &.disliked:hover {
     color: #b5b5b5;
   }
@@ -91,8 +95,7 @@ export const Buy = styled.button`
   font-size: 1.5em;
   font-family: monospace;
   background: none;
-
-
+  
   &:hover {
     color: #b8b8b8;
     cursor: pointer
