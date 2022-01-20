@@ -1,6 +1,6 @@
-import {Folder, Order, GoodName, GoodImage, GoodDescription, BuyButton, GoodPrice, Buy, CloseButton} from "./ModalFolder.styles";
 import {Link} from "react-router-dom";
 import {TCardFolder} from "./ModalFolder.types";
+import {Folder, Order, GoodName, GoodImage, GoodDescription, BuyButton, GoodPrice, Buy, CloseButton} from "./ModalFolder.styles";
 
 const ModalFolder = ({id, image, title, price, addToCart, addToCartAndBuy, closeModalFolder}:TCardFolder ) => {
     return(
