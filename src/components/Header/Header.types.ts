@@ -1,8 +1,8 @@
 export type TLinkItem = {
-  title: string;
-  link: string;
+    title: string
+    link: string
 }
 
 export type THeader = {
-  links: Array<TLinkItem>
+    links: Array<TLinkItem>
 }

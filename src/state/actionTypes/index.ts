@@ -1,10 +1,6 @@
 export const GET_API = 'GET_API'
 export const GET_DONUT_LIST = 'GET_DONUT_LIST'
 
-//modal folder
-export const SHOW_MODAL = 'SHOW_MODAL'
-export const CLOSE_MODAL = 'CLOSE_MODAL'
-
 //like
 export const SET_LIKE = 'SET_LIKE'
 export const REMOVE_LIKE = 'REMOVE_LIKE'

@@ -1,20 +1,14 @@
-import {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {
-    addGoodToCart,
-    closeModal,
-    removeLike,
-    setLike,
-    showModal
-} from "../../state/actions";
-import {links} from "../../contsts";
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addGoodToCart, removeLike, setLike } from '../../state/actions'
+import { links } from '../../contsts'
 
-import {Header} from '../../components';
-import {ModalFolder} from "../../components";
-import {Card} from "../../components";
+import { Header } from '../../components'
+import { ModalFolder } from '../../components'
+import { Card } from '../../components'
 
-import {defaultStateType} from "../../state";
-import {TCard} from "../../components/Card/Card.types";
+import { defaultStateType } from '../../state'
+import { TCard } from '../../components/Card/Card.types'
 
 import {
     CardsGroup,
@@ -26,90 +20,129 @@ import {
     Border,
     SortButton,
     Select,
-   Option, OptionLink
-} from './All.styles';
+    Option,
+    OptionLink,
+} from './All.styles'
 
 const All = () => {
     const dispatch = useDispatch()
 
-    const donuts = useSelector((state:defaultStateType) => state.donutList)
-    const isModalShow = useSelector((state:defaultStateType) => state.isModalShow)
-    const good = useSelector((state:defaultStateType) => state.goodForModal)
+    const donuts = useSelector((state: defaultStateType) => state.donutList)
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [good, setGood] = useState({
+        title: '',
+        price: 0,
+        image: '',
+        id: 0,
+    })
 
     const [donutList, setDonutList] = useState<TCard[]>(donuts)
     const [isSorting, setSorting] = useState(false)
 
     //sorting
     const sortFeatured = () => {
-        setDonutList([...donutList].sort((a, b) => a.isLiked  > b.isLiked ? -1 : 1))
+        setDonutList(
+            [...donutList].sort((a, b) => (a.isLiked > b.isLiked ? -1 : 1))
+        )
     }
     const sortPriceLowToHigh = () => {
-        setDonutList([...donutList].sort((a, b) => a.price > b.price ? 1 : -1))
+        setDonutList(
+            [...donutList].sort((a, b) => (a.price > b.price ? 1 : -1))
+        )
     }
     const sortPriceHighToLow = () => {
-        setDonutList([...donutList].sort((a, b) => a.price < b.price ? 1 : -1))
+        setDonutList(
+            [...donutList].sort((a, b) => (a.price < b.price ? 1 : -1))
+        )
     }
 
     //actions with card
-    const onLike = (id:number, isLiked:boolean) => {
+    const onLike = (id: number, isLiked: boolean) => {
         isLiked ? dispatch(removeLike(id)) : dispatch(setLike(id))
     }
 
-    const onBuy = (title:string, image:string, price:number, id:number) => {
-        dispatch(showModal({title, price, image, id}))
-    }
-    //actions with modal folder
-    const addToCart = (id:number) => {
-        dispatch(addGoodToCart(id));
-        dispatch(closeModal)
+    const onBuy = (title: string, image: string, price: number, id: number) => {
+        setIsModalVisible(true)
+        setGood({ title, image, price, id })
     }
 
-    const addToCartAndBuy = (id:number) => {
+    //actions with modal folder
+    const addToCart = (id: number) => {
         dispatch(addGoodToCart(id))
-        dispatch(closeModal)
-}
+        setIsModalVisible(false)
+    }
+
+    const addToCartAndBuy = (id: number) => {
+        dispatch(addGoodToCart(id))
+        setIsModalVisible(false)
+    }
     const closeModalFolder = () => {
-        dispatch(closeModal)
+        setIsModalVisible(false)
     }
 
     return (
         <Container>
-            {isModalShow ? <ModalFolder
-                title={good.title}
-                price={good.price}
-                image={good.image}
-                id={good.id}
-                addToCart={addToCart}
-                addToCartAndBuy={addToCartAndBuy}
-                closeModalFolder={closeModalFolder}/> : false}
+            {isModalVisible && Object.keys(good).length ? (
+                <ModalFolder
+                    title={good.title}
+                    price={good.price}
+                    image={good.image}
+                    id={good.id}
+                    addToCart={addToCart}
+                    addToCartAndBuy={addToCartAndBuy}
+                    closeModalFolder={closeModalFolder}
+                />
+            ) : (
+                false
+            )}
 
-            <Header
-                links={links}
-            />
+            <Header links={links} />
             <ContainerAll>
-                <Border/>
+                <Border />
                 <TopPart>
                     <HeaderAll>all</HeaderAll>
                     <Sorting>
-                        <SortButton onClick={() => setSorting(!isSorting)}>Sorting</SortButton>
-                        {isSorting && <Select>
-                            <Option> <OptionLink onClick={sortFeatured}>Featured</OptionLink></Option>
-                            <Option> <OptionLink onClick={sortPriceHighToLow}>Price, High to Low</OptionLink></Option>
-                            <Option> <OptionLink onClick={sortPriceLowToHigh}>Price, Low to High</OptionLink></Option>
-                        </Select>}
+                        <SortButton onClick={() => setSorting(!isSorting)}>
+                            Sorting
+                        </SortButton>
+                        {isSorting && (
+                            <Select>
+                                <Option>
+                                    {' '}
+                                    <OptionLink onClick={sortFeatured}>
+                                        Featured
+                                    </OptionLink>
+                                </Option>
+                                <Option>
+                                    {' '}
+                                    <OptionLink onClick={sortPriceHighToLow}>
+                                        Price, High to Low
+                                    </OptionLink>
+                                </Option>
+                                <Option>
+                                    {' '}
+                                    <OptionLink onClick={sortPriceLowToHigh}>
+                                        Price, Low to High
+                                    </OptionLink>
+                                </Option>
+                            </Select>
+                        )}
                     </Sorting>
                 </TopPart>
                 <CardsGroup>
-                    {donutList.map((card, index) => <Card {...card}
-                                                          onLike={onLike}
-                                                          onBuy={onBuy}
-                                                          addToCart={addToCart}
-                                                          index={index}
-                                                          key={`${card.title} + ${Math.random()}`}
-                    />)}
+                    {donutList.map((card, index) => (
+                        <Card
+                            {...card}
+                            onLike={onLike}
+                            onBuy={onBuy}
+                            addToCart={addToCart}
+                            index={index}
+                            key={`${card.title} + ${Math.random()}`}
+                        />
+                    ))}
                 </CardsGroup>
             </ContainerAll>
         </Container>
     )
-};
-export default All;
+}
+export default All
