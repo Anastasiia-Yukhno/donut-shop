@@ -1,12 +1,12 @@
 const links = [
-  {
-    title: "all",
-    link: "/"
-  },
-  {
-    title: "favorites",
-    link: "/favorites"
-  },
-];
+    {
+        title: 'all',
+        link: '/',
+    },
+    {
+        title: 'favorites',
+        link: '/favorites',
+    },
+]
 
-export default links;
+export default links
