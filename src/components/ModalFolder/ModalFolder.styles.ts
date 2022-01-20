@@ -8,25 +8,25 @@ export const Folder = styled.div`
   bottom: 0;
   background-color: rgba(10, 10, 10, 0.86);
   z-index: 99;
-  
 `
 export const Order = styled.div`
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin-top: 200px;
+  justify-content: space-evenly;
   max-width: 300px;
+  margin: 0 auto;
+  margin-top: 200px;
   background-color: lightgray;
   border-radius: 5px;
-  justify-content: space-evenly;
 `
 export const CloseButton = styled.span`
+  position: relative;
   align-self: flex-end;
   width: 30px;
   height: 30px;
   color: black;
-  position: relative;
   cursor: pointer;
+  
   &:hover {
     opacity: 1;
   }
@@ -34,9 +34,9 @@ export const CloseButton = styled.span`
     position: absolute;
     top: 5px;
     left: 12px;
-    content: ' ';
     height: 20px;
     width: 2px;
+    content: ' ';
     background-color: #333;
   }
   &:before {
@@ -51,9 +51,9 @@ export const GoodName = styled.div`
   font-size: 20px;
 `
 export const GoodImage = styled.img`
-  padding: 10px;
   width: 100%;
-  max-width: 150px; 
+  max-width: 150px;
+  padding: 10px;
   align-self: center;
 `
 export const GoodDescription = styled.div`
@@ -71,13 +71,13 @@ export const GoodPrice = styled.div`
 export const Buy = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0px 20px 10px;
+  padding: 0 20px 10px;
 `
 export const BuyButton = styled.button`
+  padding: 10px;
   background: #c7c5c4;
   border: none;
   border-radius: 10px;
-  padding: 10px;
   font-size: 18px;
   font-family: cursive;
   cursor: pointer;
