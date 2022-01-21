@@ -37,16 +37,25 @@ export const SortButton = styled.button`
 `
 export const Select = styled.div`
     position: absolute;
+    z-index: 99;
+    margin: 5px;
     font-size: 1em;
 `
 export const Option = styled.div`
     padding: 3px 0;
 `
+export const SortToolTip = styled.div`
+    font-size: 1.25em;
+    font-family: monospace;
+    border: none;
+    cursor: pointer;
+`
 export const OptionLink = styled.a`
     padding: 5px;
     text-decoration: none;
     background: #f0f0f0;
-
+    font-size: 1.25em;
+    text-align: center;
     &:hover {
         background: #d6d6d6;
     }
@@ -57,9 +66,3 @@ export const CardsGroup = styled.div`
     justify-content: center;
     width: 100%;
 `
-export const CardsHeader = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-export const CardsImageContainer = styled.div``
-export const CardsFooter = styled.div``

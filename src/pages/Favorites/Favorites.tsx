@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { addGoodToCart } from '../../state/actions'
+import { addGoodToCart, removeLike, setLike } from '../../state/actions'
 import { defaultStateType } from '../../state'
 
 import { links } from '../../contsts'
@@ -30,6 +30,9 @@ const Favorites = () => {
         image: '',
         id: 0,
     })
+    const onLike = (id: number, isLiked: boolean) => {
+        isLiked ? dispatch(removeLike(id)) : dispatch(setLike(id))
+    }
 
     const onBuy = (title: string, image: string, price: number, id: number) => {
         setIsModalVisible(true)
@@ -74,6 +77,7 @@ const Favorites = () => {
                         <Card
                             {...card}
                             onBuy={onBuy}
+                            onLike={onLike}
                             addToCart={addToCart}
                             key={`${card.title} + ${Math.random()}`}
                         />

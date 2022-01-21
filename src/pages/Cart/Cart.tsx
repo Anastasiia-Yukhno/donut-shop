@@ -62,7 +62,7 @@ const Cart = () => {
             <ContainerAll>
                 <Border />
                 <TopPart>
-                    <HeaderCart>Cart</HeaderCart>
+                    <HeaderCart>cart</HeaderCart>
                 </TopPart>
                 <GoodsContainer>
                     {cartGoods.length !== 0 ? (

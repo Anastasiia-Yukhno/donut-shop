@@ -22,7 +22,13 @@ import {
     Select,
     Option,
     OptionLink,
+    SortToolTip,
 } from './All.styles'
+import { FiHeart } from 'react-icons/fi'
+import { MdAttachMoney } from 'react-icons/md'
+import { BsArrowDown, BsArrowUp } from 'react-icons/bs'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 
 const All = () => {
     const dispatch = useDispatch()
@@ -44,16 +50,19 @@ const All = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.isLiked > b.isLiked ? -1 : 1))
         )
+        setSorting(!isSorting)
     }
     const sortPriceLowToHigh = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.price > b.price ? 1 : -1))
         )
+        setSorting(!isSorting)
     }
     const sortPriceHighToLow = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.price < b.price ? 1 : -1))
         )
+        setSorting(!isSorting)
     }
 
     //actions with card
@@ -109,21 +118,57 @@ const All = () => {
                             <Select>
                                 <Option>
                                     {' '}
-                                    <OptionLink onClick={sortFeatured}>
-                                        Featured
-                                    </OptionLink>
+                                    <Popup
+                                        trigger={
+                                            <OptionLink onClick={sortFeatured}>
+                                                <FiHeart />
+                                            </OptionLink>
+                                        }
+                                        on={['hover', 'focus']}
+                                        position="right center"
+                                        closeOnDocumentClick
+                                    >
+                                        <SortToolTip>Featured</SortToolTip>
+                                    </Popup>
                                 </Option>
                                 <Option>
                                     {' '}
-                                    <OptionLink onClick={sortPriceHighToLow}>
-                                        Price, High to Low
-                                    </OptionLink>
+                                    <Popup
+                                        trigger={
+                                            <OptionLink
+                                                onClick={sortPriceHighToLow}
+                                            >
+                                                <MdAttachMoney />
+                                                <BsArrowDown />
+                                            </OptionLink>
+                                        }
+                                        on={['hover', 'focus']}
+                                        position="right center"
+                                        closeOnDocumentClick
+                                    >
+                                        <SortToolTip>
+                                            Price, High to Low
+                                        </SortToolTip>
+                                    </Popup>
                                 </Option>
                                 <Option>
                                     {' '}
-                                    <OptionLink onClick={sortPriceLowToHigh}>
-                                        Price, Low to High
-                                    </OptionLink>
+                                    <Popup
+                                        trigger={
+                                            <OptionLink
+                                                onClick={sortPriceLowToHigh}
+                                            >
+                                                <MdAttachMoney />
+                                                <BsArrowUp />
+                                            </OptionLink>
+                                        }
+                                        on={['hover', 'focus']}
+                                        position="right center"
+                                    >
+                                        <SortToolTip>
+                                            Price, Low to High
+                                        </SortToolTip>
+                                    </Popup>
                                 </Option>
                             </Select>
                         )}
