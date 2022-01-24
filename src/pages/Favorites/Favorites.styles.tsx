@@ -12,12 +12,10 @@ export const Border = styled.div`
 `
 export const TopPart = styled.div`
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
     padding: 30px 0;
 `
 export const HeaderFav = styled.h3`
-    flex-basis: 53%;
     padding: 0;
     margin: 0;
     font-size: 2em;

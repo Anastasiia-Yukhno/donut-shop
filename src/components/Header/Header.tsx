@@ -25,7 +25,7 @@ const Header = ({ links }: THeader) => {
             </GroupOfLinks>
 
             <LinkContainer>
-                <HeaderLink to={'/cart'}>Cart</HeaderLink>
+                <HeaderLink to={'/cart'}>cart</HeaderLink>
                 {cart.length ? <GoodCount>{cart.length}</GoodCount> : false}
             </LinkContainer>
         </HeaderContainer>
