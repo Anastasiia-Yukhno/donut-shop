@@ -19,10 +19,8 @@ import {
     TopPart,
     Border,
     SortButton,
-    Select,
-    Option,
-    OptionLink,
 } from './All.styles'
+import Popup from '../../components/Popup'
 
 const All = () => {
     const dispatch = useDispatch()
@@ -44,16 +42,19 @@ const All = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.isLiked > b.isLiked ? -1 : 1))
         )
+        setSorting(!isSorting)
     }
     const sortPriceLowToHigh = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.price > b.price ? 1 : -1))
         )
+        setSorting(!isSorting)
     }
     const sortPriceHighToLow = () => {
         setDonutList(
             [...donutList].sort((a, b) => (a.price < b.price ? 1 : -1))
         )
+        setSorting(!isSorting)
     }
 
     //actions with card
@@ -103,29 +104,14 @@ const All = () => {
                     <HeaderAll>all</HeaderAll>
                     <Sorting>
                         <SortButton onClick={() => setSorting(!isSorting)}>
-                            Sorting
+                            sorting
                         </SortButton>
                         {isSorting && (
-                            <Select>
-                                <Option>
-                                    {' '}
-                                    <OptionLink onClick={sortFeatured}>
-                                        Featured
-                                    </OptionLink>
-                                </Option>
-                                <Option>
-                                    {' '}
-                                    <OptionLink onClick={sortPriceHighToLow}>
-                                        Price, High to Low
-                                    </OptionLink>
-                                </Option>
-                                <Option>
-                                    {' '}
-                                    <OptionLink onClick={sortPriceLowToHigh}>
-                                        Price, Low to High
-                                    </OptionLink>
-                                </Option>
-                            </Select>
+                            <Popup
+                                sortFeatured={sortFeatured}
+                                sortPriceHighToLow={sortPriceHighToLow}
+                                sortPriceLowToHigh={sortPriceLowToHigh}
+                            />
                         )}
                     </Sorting>
                 </TopPart>

@@ -18,7 +18,7 @@ export const GroupOfLinks = styled.div`
     background: #f0f0f0;
 `
 export const HeaderLink = styled(Link)`
-    padding: 0 5px;
+    padding: 0 10px;
     text-decoration: none;
     color: #363636;
     text-align: center;
