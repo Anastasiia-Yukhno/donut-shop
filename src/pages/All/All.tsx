@@ -19,16 +19,8 @@ import {
     TopPart,
     Border,
     SortButton,
-    Select,
-    Option,
-    OptionLink,
-    SortToolTip,
 } from './All.styles'
-import { FiHeart } from 'react-icons/fi'
-import { MdAttachMoney } from 'react-icons/md'
-import { BsArrowDown, BsArrowUp } from 'react-icons/bs'
-import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
+import Popup from '../../components/Popup'
 
 const All = () => {
     const dispatch = useDispatch()
@@ -112,65 +104,14 @@ const All = () => {
                     <HeaderAll>all</HeaderAll>
                     <Sorting>
                         <SortButton onClick={() => setSorting(!isSorting)}>
-                            Sorting
+                            sorting
                         </SortButton>
                         {isSorting && (
-                            <Select>
-                                <Option>
-                                    {' '}
-                                    <Popup
-                                        trigger={
-                                            <OptionLink onClick={sortFeatured}>
-                                                <FiHeart />
-                                            </OptionLink>
-                                        }
-                                        on={['hover', 'focus']}
-                                        position="right center"
-                                        closeOnDocumentClick
-                                    >
-                                        <SortToolTip>Featured</SortToolTip>
-                                    </Popup>
-                                </Option>
-                                <Option>
-                                    {' '}
-                                    <Popup
-                                        trigger={
-                                            <OptionLink
-                                                onClick={sortPriceHighToLow}
-                                            >
-                                                <MdAttachMoney />
-                                                <BsArrowDown />
-                                            </OptionLink>
-                                        }
-                                        on={['hover', 'focus']}
-                                        position="right center"
-                                        closeOnDocumentClick
-                                    >
-                                        <SortToolTip>
-                                            Price, High to Low
-                                        </SortToolTip>
-                                    </Popup>
-                                </Option>
-                                <Option>
-                                    {' '}
-                                    <Popup
-                                        trigger={
-                                            <OptionLink
-                                                onClick={sortPriceLowToHigh}
-                                            >
-                                                <MdAttachMoney />
-                                                <BsArrowUp />
-                                            </OptionLink>
-                                        }
-                                        on={['hover', 'focus']}
-                                        position="right center"
-                                    >
-                                        <SortToolTip>
-                                            Price, Low to High
-                                        </SortToolTip>
-                                    </Popup>
-                                </Option>
-                            </Select>
+                            <Popup
+                                sortFeatured={sortFeatured}
+                                sortPriceHighToLow={sortPriceHighToLow}
+                                sortPriceLowToHigh={sortPriceLowToHigh}
+                            />
                         )}
                     </Sorting>
                 </TopPart>

@@ -17,7 +17,7 @@ export const TopPart = styled.div`
     padding: 30px 0;
 `
 export const HeaderAll = styled.h3`
-    flex-basis: 42%;
+    flex-basis: 40%;
     padding: 0;
     margin: 0;
     font-size: 2em;
@@ -26,7 +26,7 @@ export const HeaderAll = styled.h3`
 `
 export const Sorting = styled.div`
     position: relative;
-    width: 10%;
+    width: 13%;
     cursor: pointer;
 `
 export const SortButton = styled.button`
@@ -34,31 +34,6 @@ export const SortButton = styled.button`
     font-family: monospace;
     border: none;
     cursor: pointer;
-`
-export const Select = styled.div`
-    position: absolute;
-    z-index: 99;
-    margin: 5px;
-    font-size: 1em;
-`
-export const Option = styled.div`
-    padding: 3px 0;
-`
-export const SortToolTip = styled.div`
-    font-size: 1.25em;
-    font-family: monospace;
-    border: none;
-    cursor: pointer;
-`
-export const OptionLink = styled.a`
-    padding: 5px;
-    text-decoration: none;
-    background: #f0f0f0;
-    font-size: 1.25em;
-    text-align: center;
-    &:hover {
-        background: #d6d6d6;
-    }
 `
 export const CardsGroup = styled.div`
     display: flex;
